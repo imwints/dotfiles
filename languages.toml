@@ -20,6 +20,11 @@ name = "cmake"
 language-servers = ["neocmake", "cmake-language-server"]
 
 [[language]]
+name = "fortran"
+indent = { tab-width = 3, unit = "   " }
+formatter = { command = "fprettify", args = ["--stdout"] }
+
+[[language]]
 name = "python"
 language-servers = ["pyright", "pylsp", "ruff", "harper"]
 formatter = { command = "ruff", args = ["format", "-"] }
