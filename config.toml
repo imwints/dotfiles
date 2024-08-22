@@ -1,0 +1,29 @@
+theme = "tokyonight_storm"
+
+[editor]
+bufferline = "multiple"
+cursorline= true
+line-number = "relative"
+mouse = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+skip-levels = 1
+
+[editor.lsp]
+display-inlay-hints = true
+display-messages = true
+
+[editor.statusline]
+center = ["file-type"]
+mode.insert = "INSERT"
+mode.normal = "NORMAL"
+mode.select = "SELECT"

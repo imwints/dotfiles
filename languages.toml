@@ -1,0 +1,25 @@
+[language-server.harper]
+command = "harper-ls"
+args = ["--stdio"]
+
+[language-server.neocmake]
+command = "neocmakelsp"
+args = ["--stdio"]
+
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
+config = {}
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[[language]]
+name = "cmake"
+language-servers = ["neocmake", "cmake-language-server"]
+
+[[language]]
+name = "python"
+language-servers = ["pyright", "pylsp", "ruff", "harper"]
+formatter = { command = "ruff", args = ["format", "-"] }
