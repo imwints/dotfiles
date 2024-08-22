@@ -23,3 +23,7 @@ language-servers = ["neocmake", "cmake-language-server"]
 name = "python"
 language-servers = ["pyright", "pylsp", "ruff", "harper"]
 formatter = { command = "ruff", args = ["format", "-"] }
+
+[[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["format", "-"] }

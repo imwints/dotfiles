@@ -2,7 +2,7 @@ theme = "tokyonight_storm"
 
 [editor]
 bufferline = "multiple"
-cursorline= true
+cursorline = true
 line-number = "relative"
 mouse = false
 
