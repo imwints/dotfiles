@@ -7,6 +7,7 @@ if status is-interactive
     end
 
     complete_command fd --gen-completions=fish
+    complete_command gix completions --shell fish
     complete_command jj util completion fish
     complete_command rg --generate complete-fish
     complete_command ruff generate-shell-completion fish
