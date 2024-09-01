@@ -3,7 +3,6 @@ theme = "gruvbox_dark_hard"
 [editor]
 bufferline = "multiple"
 cursorline = true
-line-number = "relative"
 mouse = false
 
 [editor.cursor-shape]
