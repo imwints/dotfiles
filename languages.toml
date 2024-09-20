@@ -1,3 +1,6 @@
+[language-server.clangd]
+args = ["--inlay-hints=true"]
+
 [language-server.harper]
 command = "harper-ls"
 args = ["--stdio"]
