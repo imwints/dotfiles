@@ -1,6 +1,3 @@
-[language-server.clangd]
-args = ["--inlay-hints=true"]
-
 [language-server.harper]
 command = "harper-ls"
 args = ["--stdio"]
@@ -21,6 +18,15 @@ args = ["server"]
 [[language]]
 name = "cmake"
 language-servers = ["neocmake", "cmake-language-server"]
+
+[[language]]
+name = "ebuild"
+scope = "source.ebuild"
+injection-regex = "ebuild"
+file-types = ["ebuild", "eclass"]
+indent = { tab-width = 4, unit = "    " }
+language-servers = ["ebuild"]
+grammar = "bash"
 
 [[language]]
 name = "fortran"

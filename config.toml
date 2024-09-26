@@ -1,4 +1,4 @@
-theme = "gruvbox_dark_hard"
+theme = "everforest_dark"
 
 [editor]
 bufferline = "multiple"
@@ -11,7 +11,6 @@ normal = "block"
 select = "underline"
 
 [editor.file-picker]
-git-ignore = true
 hidden = false
 
 [editor.indent-guides]
