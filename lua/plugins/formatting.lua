@@ -4,7 +4,7 @@ return {
     cmd = "ConformInfo",
     -- stylua: ignore
     keys = {
-      { "<leader>cf", function() require("conform").format({ async = true }) end, desc = "Format buffer" },
+      { "<leader>cf", mode = { "n", "v" }, function() require("conform").format({ async = true }) end, desc = "Format buffer" },
     },
     dependencies = { "williamboman/mason.nvim" },
     init = function()
