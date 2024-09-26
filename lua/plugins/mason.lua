@@ -4,7 +4,13 @@ return {
     build = ":MasonUpdate",
     cmd = "Mason",
     opts = {
-      ui = { border = "rounded" },
+      ui = {
+        icons = {
+          package_installed = "✓",
+          package_pending = "➜",
+          package_uninstalled = "✗",
+        },
+      },
     },
   },
 }
