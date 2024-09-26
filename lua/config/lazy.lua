@@ -18,10 +18,16 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup lazy.nvim
 require("lazy").setup({
   defaults = { lazy = true },
-  spec = {
-    -- import your plugins
-    { import = "plugins" },
-  },
-  -- automatically check for plugin updates
+  spec = { { import = "plugins" } },
+  ui = { border = "rounded" },
   checker = { enabled = true },
+  change_detection = { notify = false },
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "netrwPlugin",
+        "tohtml",
+      },
+    },
+  },
 })

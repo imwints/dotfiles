@@ -7,6 +7,7 @@ vim.opt.ignorecase = true
 vim.opt.inccommand = "split"
 vim.opt.number = true
 vim.opt.pumheight = 8
+vim.opt.pumwidth = 30
 vim.opt.scrolloff = 8
 vim.opt.shiftwidth = 4
 vim.opt.showmode = false

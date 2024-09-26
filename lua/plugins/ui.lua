@@ -1,4 +1,5 @@
 return {
+  { "nvim-tree/nvim-web-devicons" },
   {
     "sainnhe/gruvbox-material",
     priority = 1000,
@@ -17,9 +18,9 @@ return {
     dependencies = { "MunifTanjim/nui.nvim" },
     opts = {
       lsp = {
-	progress = {
-	  enabled = true,
-	},
+        progress = {
+          enabled = true,
+        },
       },
       views = {
         cmdline_popup = {
@@ -54,11 +55,6 @@ return {
     },
   },
   {
-    "stevearc/dressing.nvim",
-    event = "VeryLazy",
-    opts = {},
-  },
-  {
     "folke/which-key.nvim",
     event = "VeryLazy",
     config = function()
@@ -69,10 +65,16 @@ return {
       })
     end,
   },
-  { "nvim-tree/nvim-web-devicons" },
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
     opts = {},
+  },
+  {
+    "stevearc/dressing.nvim",
+    event = "VeryLazy",
+    opts = {
+      input = { enabled = false },
+    },
   },
 }

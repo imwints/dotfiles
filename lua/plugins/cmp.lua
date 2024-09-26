@@ -23,16 +23,19 @@ return {
       local cmp = require("cmp")
       local luasnip = require("luasnip")
 
+      cmp.event:on("confirm_done", require("nvim-autopairs.completion.cmp").on_confirm_done())
+
       cmp.setup({
         snippet = {
           expand = function(args)
             luasnip.lsp_expand(args.body)
           end,
         },
+        ---@diagnostic disable-next-line: missing-fields
         performance = { debounce = 200 },
         mapping = cmp.mapping.preset.insert({
-          ["<c-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-          ["<c-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+          ["<c-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+          ["<c-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
           ["<c-b>"] = cmp.mapping.scroll_docs(-4),
           ["<c-f>"] = cmp.mapping.scroll_docs(4),
           ["<c-space>"] = cmp.mapping.complete(),
@@ -54,23 +57,26 @@ return {
           end),
           ["<tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
-              cmp.select_next_item()
+              local entry = cmp.get_selected_entry()
+              if not entry then
+                cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+	      else
+		cmp.confirm()
+              end
             elseif luasnip.locally_jumpable(1) then
               luasnip.jump(1)
             else
               fallback()
             end
-          end, { "i", "s" }),
+          end, { "i", "s", "c" }),
 
           ["<s-tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_prev_item()
-            elseif luasnip.locally_jumpable(-1) then
+            if luasnip.locally_jumpable(-1) then
               luasnip.jump(-1)
             else
               fallback()
             end
-          end, { "i", "s" }),
+          end, { "i", "s", "c" }),
         }),
         enabled = function()
           local disabled = false
