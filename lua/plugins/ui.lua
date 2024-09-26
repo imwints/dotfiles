@@ -1,9 +1,21 @@
 return {
   { "nvim-tree/nvim-web-devicons" },
   {
-    "sainnhe/gruvbox-material",
+    "sainnhe/everforest",
     priority = 1000,
     lazy = false,
+    config = function()
+      vim.g.everforest_background = "hard"
+      vim.g.everforest_better_performance = true
+      vim.g.everforest_enable_bold = true
+      vim.g.everforest_enable_italic = true
+      vim.cmd.colorscheme("everforest")
+    end,
+  },
+  {
+    "sainnhe/gruvbox-material",
+    priority = 1000,
+    -- lazy = false,
     config = function()
       vim.g.gruvbox_material_background = "hard"
       vim.g.gruvbox_material_better_performance = true
