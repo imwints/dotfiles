@@ -16,21 +16,19 @@ return {
         clangd = {},
         lua_ls = {},
         ruff = {},
+        -- rust_analyzer = {},
         taplo = {},
       }
-      for server, _ in pairs(servers) do
-        require("lspconfig")[server].setup({
-          on_attach = require("lsp").on_attach,
-          capabilities = capabilities,
-        })
+      for server, opts in pairs(servers) do
+        opts.on_attach = require("lsp").on_attach
+        opts.capabilities = capabilities
+        require("lspconfig")[server].setup(opts)
       end
     end,
   },
   {
     "williamboman/mason-lspconfig.nvim",
     dependencies = { "williamboman/mason.nvim" },
-    opts = {
-      ensure_installed = { "lua_ls" },
-    },
+    opts = { ensure_installed = { "lua_ls" } },
   },
 }

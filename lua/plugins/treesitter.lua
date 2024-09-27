@@ -68,10 +68,4 @@ return {
       })
     end,
   },
-  {
-    "Bekaboo/dropbar.nvim",
-    -- Dropbar is lazy by default
-    lazy = false,
-    config = false,
-  },
 }

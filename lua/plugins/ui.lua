@@ -5,7 +5,7 @@ return {
     priority = 1000,
     lazy = false,
     config = function()
-      vim.g.everforest_background = "hard"
+      vim.g.everforest_background = "medium"
       vim.g.everforest_better_performance = true
       vim.g.everforest_enable_bold = true
       vim.g.everforest_enable_italic = true

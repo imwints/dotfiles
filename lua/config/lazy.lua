@@ -20,7 +20,6 @@ require("lazy").setup({
   defaults = { lazy = true },
   spec = { { import = "plugins" } },
   ui = { border = "none" },
-  checker = { enabled = true },
   change_detection = { notify = false },
   performance = {
     rtp = {
@@ -32,6 +31,5 @@ require("lazy").setup({
   },
 })
 
-vim.keymap.set("n", "<leader>l", function()
-  require("lazy").home()
-end, { desc = "Lazy" })
+-- stylua: ignore
+vim.keymap.set("n", "<leader>l", function() require("lazy").home() end, { desc = "Lazy" })

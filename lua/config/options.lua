@@ -1,13 +1,12 @@
 vim.opt.clipboard:append("unnamedplus")
 vim.opt.cursorline = true
-vim.opt.cursorlineopt = "number"
 vim.opt.fillchars:append(",eob: ")
 vim.opt.hlsearch = true
 vim.opt.ignorecase = true
 vim.opt.inccommand = "split"
 vim.opt.number = true
-vim.opt.pumheight = 8
-vim.opt.pumwidth = 30
+vim.opt.pumheight = 15
+vim.opt.relativenumber = true
 vim.opt.scrolloff = 999
 vim.opt.shiftwidth = 4
 vim.opt.showmode = false
