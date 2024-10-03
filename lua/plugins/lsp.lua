@@ -16,7 +16,7 @@ return {
         clangd = {},
         lua_ls = {},
         ruff = {},
-        -- rust_analyzer = {},
+        rust_analyzer = {},
         taplo = {},
       }
       for server, opts in pairs(servers) do
