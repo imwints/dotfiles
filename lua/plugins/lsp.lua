@@ -15,6 +15,8 @@ return {
       local servers = {
         clangd = {},
         lua_ls = {},
+        pylsp = {},
+        pyright = {},
         ruff = {},
         rust_analyzer = {},
         taplo = {},
