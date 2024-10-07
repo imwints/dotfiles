@@ -20,7 +20,6 @@ return {
         pylsp = {},
         pyright = {},
         ruff = {},
-        rust_analyzer = {},
         taplo = {},
       }
       for server, opts in pairs(servers) do
