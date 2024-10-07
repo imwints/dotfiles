@@ -14,6 +14,7 @@ return {
 
       local servers = {
         clangd = {},
+        harper_ls = {},
         lua_ls = {},
         pylsp = {},
         pyright = {},
