@@ -16,6 +16,7 @@ return {
         clangd = {},
         harper_ls = {},
         lua_ls = {},
+        neocmake = {},
         pylsp = {},
         pyright = {},
         ruff = {},
