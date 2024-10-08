@@ -35,6 +35,7 @@ function M.document_symbols()
 end
 
 function M.on_attach(client, bufnr)
+  vim.lsp.inlay_hint.enable(true, { bufnr })
   M.map("gd", M.definition, "Goto definition")
   M.map("gD", M.declaration, "Goto declaration")
   M.map("gi", M.implementation, "Goto implementation")

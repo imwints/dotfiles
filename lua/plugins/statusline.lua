@@ -41,7 +41,7 @@ return {
   },
   {
     "Bekaboo/dropbar.nvim",
-    event = "VeryLazy",
+    lazy = false,
     config = false,
   },
 }
