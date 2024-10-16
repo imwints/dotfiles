@@ -17,16 +17,11 @@ return {
       require("nvim-treesitter.configs").setup({
         ensure_installed = {
           "bash",
-          "c",
           "cpp",
-          "lua",
-          "markdown",
           "markdown_inline",
           "query",
           "regex",
           "rust",
-          "vim",
-          "vimdoc",
         },
         highlight = {
           enable = true,
