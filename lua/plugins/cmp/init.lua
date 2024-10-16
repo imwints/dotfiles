@@ -50,6 +50,7 @@ return {
         completion = {
 	  autocomplete = false,
           completeopt = "menu,menuone,noinsert",
+	  keyword_length = 3,
         },
         view = { entries = "native" },
         formatting = {
