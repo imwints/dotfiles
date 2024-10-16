@@ -11,9 +11,11 @@ local function is_enabled()
   disabled = disabled or context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
   return not disabled
 end
+
 return {
   {
-    "hrsh7th/nvim-cmp",
+    "iguanacucumber/magazine.nvim",
+    name = "nvim-cmp",
     event = "InsertEnter",
     dependencies = {
       "neovim/nvim-lspconfig",
@@ -46,6 +48,7 @@ return {
           end,
         },
         completion = {
+	  autocomplete = false,
           completeopt = "menu,menuone,noinsert",
         },
         view = { entries = "native" },
@@ -56,7 +59,25 @@ return {
         },
         mapping = cmp.mapping.preset.insert({
           ["<c-space>"] = cmp.mapping.complete(),
-          ["<cr>"] = cmp.mapping.confirm({ select = true }),
+          ["<cr>"] = cmp.mapping.confirm({ select = false }),
+          ["<tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.confirm({ select = true })
+            elseif luasnip.locally_jumpable(1) then
+              luasnip.jump(1)
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
+          ["<s-tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+              cmp.select_prev_item()
+            elseif luasnip.locally_jumpable(-1) then
+              luasnip.jump(-1)
+            else
+              fallback()
+            end
+          end, { "i", "s" }),
         }),
         enabled = is_enabled,
         sources = cmp.config.sources({
@@ -74,13 +95,10 @@ return {
           priority_weight = 2,
           comparators = {
             cmp.config.compare.exact,
+            cmp.config.compare.score,
             cmp.config.compare.scopes,
-            -- cmp.config.compare.score,
-            -- require("cmp-under-comparator").under,
-            -- cmp.config.compare.sort_text,
-            -- cmp.config.compare.kind,
-            -- cmp.config.compare.length,
-            -- cmp.config.compare.order,
+            require("cmp-under-comparator").under,
+            cmp.config.compare.length,
           },
         },
       })
